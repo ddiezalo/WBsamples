@@ -1,0 +1,222 @@
+%----------------------------------------------------------------------------------------
+%	This master file is what I used to compile multiple chapters of my PhD Thesis in LaTeX.
+%
+%	Created by Daniel Díez Alonso, all rights reserved.
+%	Shared only for recruitment purposes. Please, do not circulate for any other purposes.
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	SYSTEM SETTINGS
+%----------------------------------------------------------------------------------------
+\documentclass[12pt]{article}%
+\usepackage{setspace}
+	%\doublespacing 
+	%\onehalfspacing
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bbm}  %maths double stroke notation
+\usepackage{fancyhdr}
+\usepackage{comment}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.2cm, right=2.2cm]%
+{geometry}
+\usepackage{times}
+\usepackage{changepage}
+\usepackage{ragged2e}		% allows to switch to justified text alignment
+\usepackage{graphicx}
+	\graphicspath{{6months_reports/figures/}}
+\usepackage[round]{natbib}   % cite printing; 'round' instead of square brackets
+%	\bibliographystyle{plainnat}
+	\bibliographystyle{abbrvnat} %for first name abreviations in References
+\usepackage[colorlinks=true]{hyperref} %URL link without frames (but colours)
+	\hypersetup{hidelinks=true} %keep all links in black colour
+\usepackage{todonotes} % margin notes
+\usepackage{xcolor} % Tables font color
+\usepackage{colortbl} % Tables fill color
+\usepackage{rotating} % Tables rotation
+\usepackage{multirow} % Tables merged cells
+\usepackage{booktabs} % For tables
+	\usepackage{xcolor} % Tables font color
+	\usepackage{colortbl} % Tables fill color
+	\usepackage{rotating} % Tables rotation
+	\usepackage{multirow} % Tables merged cells
+\usepackage{adjustbox} % Adjust any content to a page
+\usepackage{dcolumn} % Center column numbers at the decimal point
+\usepackage[flushleft]{threeparttable} % Add footnotes to tables
+\usepackage{tikz}	% Checkmarks
+	\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+\usepackage{titling}	% To allow subtitle in \maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}
+}
+
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+
+
+
+\begin{document}
+
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+\center % Center everything on the page
+ 
+%----------------------------------------------------------------------------------------
+%	HEADING SECTIONS
+%----------------------------------------------------------------------------------------
+
+\textsc{\LARGE University of Warwick}\\[1.5cm] % Name of your university/college
+\textsc{\Large PhD Thesis}\\[0.5cm] % Major heading such as course name
+\textsc{\large Periodic report}\\[0.5cm] % Minor heading such as course title
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\HRule \\[0.4cm]
+{ \huge \bfseries Extensive Summary}\\[0.4cm] % Title of your document
+\HRule \\[1.5cm]
+ 
+%----------------------------------------------------------------------------------------
+%	AUTHOR SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Author:}\\
+Daniel \textsc{D\'iez Alonso} % Your name
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervisors:} \\
+Dr. Miguel \textsc{Almunia} \\ % Supervisor's Name
+Dr. Carlo \textsc{Perroni} \\
+Dr. Lucie \textsc{Gadenne}
+\end{flushright}
+\end{minipage}\\[2cm]
+
+% If you don't want a supervisor, uncomment the two lines below and remove the section above
+%\Large \emph{Author:}\\
+%John \textsc{Smith}\\[3cm] % Your name
+
+%----------------------------------------------------------------------------------------
+%	DATE SECTION
+%----------------------------------------------------------------------------------------
+
+{\large \today}\\[2cm] % Date, change the \today to a set date if you want to be precise
+
+%----------------------------------------------------------------------------------------
+%	LOGO SECTION
+%----------------------------------------------------------------------------------------
+
+\includegraphics[width=6cm]{warwicklogo.jpg}\\[1cm] % Include a department/university logo - this will require the graphicx package
+ 
+%----------------------------------------------------------------------------------------
+
+\vfill % Fill the rest of the page with whitespace
+
+\end{titlepage}
+
+\tableofcontents
+
+
+%----------------------------------------------------------------------------------------
+%	EXECUTIVE SUMMARY
+%----------------------------------------------------------------------------------------
+\newpage
+\section{Executive Summary}
+The current work includes the 3 projects that should lead to the 3 chapters of the PhD Thesis. This section highlights the current state of progress of each of these projects, together with their most relevant information. Extensive summaries of each project are included in the subsequent sections, with \textcolor{red}{notes highlighted in red}.
+
+\subsection*{Project 1: No Pay No Gain - Effects of Tax Systems on Perceived Income Rank}
+
+\begin{itemize}
+	\item \textbf{Motivation:} Perceived (not only real) income distributions are key in explaining preferences for redistribution. \\ The current models of perceived distributions fail to explain the zero income effect for lower values of income (below the tax-free allowance).
+	\item \textbf{Research Question:} Do tax systems influence (bias) taxpayers’ perceived position in the income distribution?
+	\item \textbf{Hypotheses:} Taxpayers infer their position based on how much taxes they pay as proportion of their income (ATR) rather than purely based on income levels.
+	\item \textbf{Empirical Motivation:} regression analysis using General Social Survey data (USA)  for years 1974-2016 and exploiting changes in the Income Tax Law.
+	\item \textbf{Experimental Approach:} experiment on Amazon mTurk using American workers. Identification is achieved by randomizing the tax system that players face (flat unique tax rate, progressive tax system or none).
+	\item \textbf{Econometric Analysis:} OLS, Panel and OProbit regressions are run on the perceived income position measures (income rank, distance from mean income and probability of being above the average income).
+	\item \textbf{Results:} \textcolor{red}{(Provisional)} Motivational analysis shows high correlation between ATR and perceived income position, stable after adding controls (even when including income). First pilot experiment seems to show that biases in perceived income position can be reduced by implementing tax schedules with resulting distribution of tax burden that approximates the true income CDF. The second experiment failed to find signifficant differences in perceived income rank and distance from the mean, but shows that taxpayers facing a progressive tax system are better at assessing their position with respect to the mean (above or below).
+	\item \textbf{Current Status:} Theoretical model finalised (consider revision). Motivating evidence (GSS data analysis) finalised. First on-line experiment implemented: problems and weaknesses identified. Second (improved) on-line experiment implemented: initial analysis done; completion pending. Working version of the draft done, including (provisional) section for the experimental approach.
+	\item \textbf{Next steps:} extend theoretical model to other definitions of tax burden (absolute tax paid), and derive clear predictions that can be plotted on a map and compared with the actual results. Re-run analysis on the experimental approach. Finalise results section, discussion and conclusions.
+	\item \textbf{Other TO DO notes:} Add AEA registry code and Ethical Scrutiny Approval. Look at updating process. Revise theoretical model and adapt for other measures of tax burden (absolute tax paid rather than ATR).
+\end{itemize}
+
+\subsection*{Project 2 - Sugar Tax Through in On-line Markets: the case of Amazon UK}
+
+\begin{itemize}
+	\item \textbf{Motivation:} Free sugar intake has been related to obesity, diabetes and other concerning morbidities for public health in western economies. At the same time, on-line sales are growing their market share considerably and recent research suggests that pass-through in on-line markets may differ from that of off-line markets. This is the first study to analyse sugar tax pass-through specifically in on-line markets.
+	\item \textbf{Research Questions:}  What is the pass-through of the UK sugar tax in on-line markets? Why does it differ from off-line retailers?
+	\item \textbf{Data:} Scraped Amazon UK daily prices for non-alcoholic drinks for 2017-2019, sold on Amazon by Amazon itself. The dataset also includes detailed information on the products' size, pack units, sugar content and other characteristics.
+	\item \textbf{Identification Strategy:} the tax only affected some products (treated) which I compare with several potential control groups: diet alternative (untaxed), competitors with lower sugar (untaxed), and non-substitute drinks unaffected by the tax (milk and water).
+	\item \textbf{Econometric Analysis:} panel regression difference-in-differences analysis using daily prices. The interaction term (Post*Treated) takes the value of the tax rather than a binary dummy, so that the estimated coefficient can be directly interpreted as a measure of tax pass-through. I also analyse spill-over effects using a dummy for close-substitutes that takes value one after the reform.
+	\item \textbf{Current Status:} I have processed the data for the available set of products in the UK. Some initial analysis has been done and there is near to full tax pass-through from the first quarter after the introduction of the law, stable the whole initial year after the reform. I have also done extensive literature review in On-line market competition, current trends and existing studies analysing pass-through in On-line markets.
+	\item \textbf{Next steps:} Start drafting a working version of the paper. Importance to work on the theory behind the differences between on-line vs off-line (is there a puzzle?); add a discussion section on this.
+	\item \textbf{TO DO:} Deflate prices (and tax); Scrape price by categories of food to compare all supermarkets with Amazon and Ocado and show if lower prices is a systematic difference or it only applies to some sections (relate to bundle shopping/pricing).
+\end{itemize}
+
+\subsection*{Project 3 - The Effect of Shocks to Future Income on Current Labour Decisions: the Spanish pensions reform}
+
+\begin{itemize}
+	\item \textbf{Co-authored} with Jon Piqueras (UCL)
+	\item \textbf{Research Questions:} Do shocks on future pension earnings affect current labour and retirement decisions? 
+	\item \textbf{Context:} The Spanish reform of the pensions system in 2013 increased the amount of years used for calculation of the retirement pensions from 15 to 25. This generated an exogenous future income shock for many people (positive for some, negative for others).
+	\item \textbf{Hypotheses:} positive future income shocks increase the chance of early retirement.
+	\item \textbf{Data:} Spanish representative sample of labour record (individual level).
+	\item \textbf{Econometric Analysis:} panel 2SLS using sector shocks to predict probability of job loss during the crisis.
+	\item \textbf{Current Status:} On hold.
+	\item \textbf{Next steps:} data is clean but we are still merging some additional cohorts. Further literature review needs to be done.
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%	PROJECT 1 - TAX SCALES AND PERCEIVED RANKS
+%----------------------------------------------------------------------------------------
+\newpage
+\section{Project 1 - No Pay No Gain - Effects of Tax Systems on Perceived Income Distributions}
+
+\input{6months_reports/sum_project1.tex}
+
+%----------------------------------------------------------------------------------------
+%	PROJECT 2 - AMAZON AND TAXES
+%----------------------------------------------------------------------------------------
+\newpage
+\section{Project 2 - Tax Incidence in On-line Markets: the pass-through of the Sugar Tax on Amazon UK}
+
+\input{6months_reports/sum_project2.tex}
+
+%----------------------------------------------------------------------------------------
+%	PROJECT 3 - PENSIONS SHOCKS IN SPAIN
+%----------------------------------------------------------------------------------------
+%\newpage
+%\section{Project 3 - Shocks to Future Income}
+
+%\input{6months_reports/sum_project3.tex}
+
+%----------------------------------------------------------------------------------------
+%	REFERENCES SECTION
+%----------------------------------------------------------------------------------------
+\newpage
+\bibliography{C:/Users/username/Dropbox/PhD/Literature_Review/library}{}
+%for this to update you need to press F6+F11+F6+F6+F7
+
+%----------------------------------------------------------------------------------------
+%	APPENDIXES
+%----------------------------------------------------------------------------------------
+\newpage
+\section*{Appendix}
+\appendix
+
+%----------------------------------------------------------------------------------------
+
+\end{document} 
